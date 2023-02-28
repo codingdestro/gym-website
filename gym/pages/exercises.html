@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/exercise.css" />
+    <link rel="stylesheet" href="../styles/animation.css" />
+    <script src="../menu.js" defer></script>
+    <title>the gym | exercises</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="../images/logo.svg" width="40px" alt="" />
+      </div>
+      <div class="menu-button" style="--clr: white"></div>
+      <div class="menu">
+        <a href="../">home</a>
+        <a href="">diet</a>
+        <a href="../pages/workout.html">workout</a>
+        <a href="#about">about us</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="exercise-banner">
+        <span>exercises</span>
+      </div>
+      <section class="exercise-section">
+        <div class="body-part">
+          <div class="">abs</div>
+          <div>shoulder</div>
+          <div>back</div>
+          <div>chest</div>
+          <div>biceps</div>
+          <div>triceps</div>
+          <div>thighs</div>
+          <div>calf</div>
+          <div>trapeziues</div>
+          <div>arm</div>
+        </div>
+        <div id="card-container">
+          <div class="card"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="../exercise.js"></script>
+  <script>
+    let section = document.querySelector("#card-container");
+    let buttons = document.querySelectorAll(".body-part div");
+    let scroll = document.querySelector(".body-part");
+    scroll.addEventListener("scroll", (e) => {
+      console.log(e);
+    });
+
+    function card(heading) {
+      cd = `
+        <div class="card"><div class="heading">${heading}</div>
+          <div class="table">`;
+
+      exercise[heading].forEach((ele) => {
+        cd += `<div>${ele}</div>`;
+      });
+      cd += `</div></div>`;
+      section.innerHTML = cd;
+    }
+
+    let prev = 0;
+    buttons[prev].classList.add("active");
+    card(buttons[prev].innerHTML);
+    buttons.forEach((ele, idx) => {
+      buttons[idx].addEventListener("click", () => {
+        buttons[prev].classList.toggle("active");
+        buttons[idx].classList.add("active");
+        prev = idx;
+        card(buttons[idx].innerHTML);
+        console.log("hi");
+      });
+    });
+  </script>
+</html>

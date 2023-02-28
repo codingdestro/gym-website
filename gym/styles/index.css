@@ -1,0 +1,218 @@
+* {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.header {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.253);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.menu-button {
+  width: 25px;
+  cursor: pointer;
+  height: 15px;
+  position: relative;
+  border-bottom: 2px solid var(--clr);
+  border-top: 2px solid var(--clr);
+  transition: 0.3s;
+}
+.menu-active {
+  border-bottom: none;
+  border-top: none;
+  transform: rotate(-45deg);
+}
+.menu-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr);
+  top: 50%;
+  left: 0;
+  transform: rotate(90deg) translateY(-50%);
+}
+.menu-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu {
+  opacity: 0;
+  overflow: hidden;
+  font-family: "sans";
+  transition: 0.3s;
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.show {
+  opacity: 1;
+  transition: 0.3s;
+  top: 30px;
+}
+.menu a {
+  user-select: none;
+  padding: 5px 8px;
+  text-transform: capitalize;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 0.4rem;
+  transition: 0.2s;
+  text-decoration: none;
+  color: black;
+}
+.menu a:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.banner {
+  background-image: url("/images/dumbel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 60vh;
+}
+
+.banner .card {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-family: "Abril Fatface";
+  color: whitesmoke;
+}
+.banner .card p:first-child {
+  text-transform: capitalize;
+  letter-spacing: 10px;
+  font-size: 50px;
+}
+.banner .card p:last-child {
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: right;
+  color: teal;
+  text-shadow: 2px 2px 5px black;
+  font-style: italic;
+}
+
+.banner .sub-card {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  font-family: "Labrada";
+  text-transform: capitalize;
+  letter-spacing: 5px;
+  font-size: 50px;
+  transform: rotate(-10deg);
+  color: rgb(194, 31, 31);
+  padding: 10px 15px;
+  border-radius: 0.4rem;
+  backdrop-filter: blur(4px);
+  background: linear-gradient(30deg, rgb(228, 175, 184), transparent);
+}
+
+.pages {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+.page-container img {
+  width: 60%;
+}
+
+.page-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.page-card {
+  font-size: 20px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  letter-spacing: 2px;
+  font-family: "Nunito Sans";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.page-card::first-letter {
+  text-transform: uppercase;
+}
+.page-card .page-button {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  text-transform: capitalize;
+  border: 2px solid teal;
+  margin-top: 10px;
+  text-align: center;
+  padding: 8px 5px;
+  border-radius: 0.5rem;
+  font-family: "sans";
+}
+
+footer {
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: "sans";
+  margin-top: 200px;
+}
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  padding: 40px 20px;
+}
+footer .details {
+  display: flex;
+  margin-left: 90px;
+  flex-direction: column;
+  gap: 10px;
+  text-align: justify;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 50px;
+  font-size: 14px;
+}
+.contact span:first-child {
+  text-transform: capitalize;
+  font-size: 18px;
+}
